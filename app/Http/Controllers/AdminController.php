@@ -22,8 +22,20 @@ class AdminController extends Controller
 
         // session(['custom_key' => 'without request']);
 
+        // Unset session
+
+        $request->session()->forget('custom_key');
+
         // Getting complete session data
 
+        // $request->session()->all();
+
+        // Getting specific session data
+
         return $request->session()->get('custom_key');
+
+        // Another way of retrieving
+
+        // return session('custom_key');
     }
 }
