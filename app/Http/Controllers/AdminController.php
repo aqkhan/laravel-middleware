@@ -12,7 +12,18 @@ class AdminController extends Controller
         $this->middleware('IsAdmin');
     }
 
-    public function index() {
-        return "You're an administrator";
+    public function index(Request $request) {
+
+        // Setting session using request global
+
+        // $request->session()->put(['custom_key' => 'custom_val']);
+
+        // Setting session without request
+
+        // session(['custom_key' => 'without request']);
+
+        // Getting complete session data
+
+        return $request->session()->get('custom_key');
     }
 }
